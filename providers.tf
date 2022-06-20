@@ -2,4 +2,5 @@ provider "aws"{
 region = "us-east-1"
 access_key = "ASIAW5HAFSDE6XBOLRHI"
 secret_key = "R222q/JuIGqVYoHqZyNVa2MHchxKWA86GX5UNZQQ"
+token = "FwoGZXIvYXdzECwaDFKIOoo8cy4onMgR0yLtAa4F2bcb4B3VvnTOIePN+BAAtCEXAVs5nd2ojg71fawaFNGMikMtjVB9F98JL8H2hdIQmX3wiQox1CUhmB2QDm7U8DOqtZZcsSPTLthYKsEcFcSXT3zUvcOZhDPXVyea7yhi0giEVsdvx0zsZ6bYyAn/UWUAcgWmIYtujmroXMRn28Efj9qAz0RbFSSZ7pI4kTS8m8ifq4x7dEN9LkBLvTteRuoFwvU7f33DVruzWIq14MdhkZLGtY7y6iT+YTwzyuxWGPGk/kt0/R9t1DQTvwi6IDlwwlfBHfX7UbyQ/t8ff6WlPXAhpyflL1J0sijlgcOVBjIr+L6kgseTUJGd8VdK1pcjphj6qDev6ZycElfzlIzRV7/8E+bPvWRJ0CeTAw=="
 }
