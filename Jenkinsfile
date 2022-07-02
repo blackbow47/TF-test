@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            'slavenode1'
+            label 'slavenode1'
         }
     }
     tools {
