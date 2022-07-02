@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        node{
+            'slavenode1'
+        }
+    }
     tools {
        terraform 'TF'
     }
