@@ -2,7 +2,12 @@ pipeline {
     // tools {
     //    terraform 'TF'
     // }
-    agent none
+    agent {
+        docker { 
+            image 'node:16-alpine'
+            reuseNode true
+        }
+    } 
     stages {
         // stage("Fix the permission issue") {
         //     agent {
@@ -15,12 +20,12 @@ pipeline {
         //     }
         // }
         stage('Git checkout') {
-             agent {
-                docker { 
-                    image 'node:16-alpine'
-                    reuseNode true
-                }
-            } 
+            //  agent {
+            //     docker { 
+            //         image 'node:16-alpine'
+            //         reuseNode true
+            //     }
+            // } 
            steps {
                 git branch: 'Testing_container', credentialsId: 'Github', url: 'https://github.com/blackbow47/TF-test.git'
                 // docker: exec -it --user root $CONTAINER_ID sh
