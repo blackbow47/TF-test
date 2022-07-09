@@ -2,6 +2,7 @@ pipeline {
     // tools {
     //    terraform 'TF'
     // }
+    agent none
     stages {
         stage("Fix the permission issue") {
             agent {
