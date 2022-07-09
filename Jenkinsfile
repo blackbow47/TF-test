@@ -29,7 +29,7 @@ pipeline {
                 // sh 'cd new_dir'
                 // sh 'touch anewfile'
                 // sh 'echo hello-world'
-                // sh 'ls -alh'
+                sh 'ls -alh'
                 // sh ''
                 sh 'pwd'
                 // sh 'wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip'
