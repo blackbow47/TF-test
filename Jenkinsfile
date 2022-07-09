@@ -6,14 +6,23 @@ pipeline {
     //    terraform 'TF'
     // }
     stages {
+        stage("Fix the permission issue") {
+
+            agent any
+
+            steps {
+                sh "sudo chown root:jenkins /run/docker.sock"
+            }
+
+        }
         stage('Git checkout') {
            steps{
                 git branch: 'Testing_container', credentialsId: 'Github', url: 'https://github.com/blackbow47/TF-test.git'
-                sh 'docker exec -it --user root $CONTAINER_ID sh'
-                sh 'apk add sudo'
+                // docker: exec -it --user root $CONTAINER_ID sh
+                // sh 'apk add sudo'
                 sh 'wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip'
                 sh 'unzip terraform_0.12.21_linux_amd64.zip && rm terraform_0.12.21_linux_amd64.zip'
-                sh 'sudo mv terraform /usr/bin/terraform'
+                sh 'mv terraform /usr/bin/terraform'
             }
         }
         stage('terraform format check') {
