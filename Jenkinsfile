@@ -11,7 +11,7 @@ pipeline {
                 }
             }
             steps {
-                sh "chown root:ubuntu /run/docker.sock"
+                sh "sudo chown root:ubuntu /run/docker.sock"
             }
         }
         stage('Git checkout') {
