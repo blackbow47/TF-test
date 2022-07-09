@@ -28,6 +28,7 @@ pipeline {
             // } 
            steps {
                 git branch: 'Testing_container', credentialsId: 'Github', url: 'https://github.com/blackbow47/TF-test.git'
+                echo "I'm executing in node: ${env.NODE_NAME}"
                 // docker: exec -it --user root $CONTAINER_ID sh
                 // sh 'apk add sudo'
                 // sh 'mkdir new_dir'
