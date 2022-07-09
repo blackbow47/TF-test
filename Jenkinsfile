@@ -26,7 +26,7 @@ pipeline {
                 // docker: exec -it --user root $CONTAINER_ID sh
                 // sh 'apk add sudo'
                 sh 'wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip'
-                sh 'unzip terraform_0.12.21_linux_amd64.zip && rm terraform_0.12.21_linux_amd64.zip'
+                sh 'unzip -o terraform_0.12.21_linux_amd64.zip && rm terraform_0.12.21_linux_amd64.zip'
                 sh 'mv terraform /usr/bin/terraform'
                 sh 'terraform fmt'
                 sh 'terraform init'
