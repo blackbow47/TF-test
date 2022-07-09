@@ -9,11 +9,9 @@ pipeline {
         stage('Git checkout') {
            steps{
                 git branch: 'main', credentialsId: 'Github', url: 'https://github.com/blackbow47/TF-test.git'
-                sh 'apt-get update && sudo apt-get install -y gnupg software-properties-common curl'
-                sh 'curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -'
-                sh 'apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"'
-                sh 'apt-get update && sudo apt-get install terraform'
-
+                sh 'wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip'
+                sh 'unzip terraform_0.12.21_linux_amd64.zip && rm terraform_0.12.21_linux_amd64.zip'
+                sh 'mv terraform /usr/bin/terraform'
             }
         }
         stage('terraform format check') {
