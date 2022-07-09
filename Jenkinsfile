@@ -1,4 +1,12 @@
 pipeline {
+  stages {
+    stage("Fix the permission issue") {
+        agent 'master'
+        steps {
+            sh "sudo chown root:jenkins /run/docker.sock"
+            }
+        }
+  }  
   agent {
     docker { image 'node:16-alpine' }
   }
@@ -6,15 +14,6 @@ pipeline {
     //    terraform 'TF'
     // }
     stages {
-        stage("Fix the permission issue") {
-
-            agent any
-
-            steps {
-                sh "sudo chown root:jenkins /run/docker.sock"
-            }
-
-        }
         stage('Git checkout') {
            steps{
                 git branch: 'Testing_container', credentialsId: 'Github', url: 'https://github.com/blackbow47/TF-test.git'
