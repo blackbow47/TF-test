@@ -1,12 +1,10 @@
 pipeline {
-    agent {
-        node {
-            label 'slavenode1'
-        }
-    }
-    tools {
-       terraform 'TF'
-    }
+  agent {
+    docker { image 'node:16-alpine' }
+  }
+    // tools {
+    //    terraform 'TF'
+    // }
     stages {
         stage('Git checkout') {
            steps{
