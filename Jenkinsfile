@@ -4,16 +4,16 @@ pipeline {
     // }
     agent none
     stages {
-        stage("Fix the permission issue") {
-            agent {
-                node {
-                    label 'master'
-                }
-            }
-            steps {
-                sh "sudo chown root:ubuntu /run/docker.sock"
-            }
-        }
+        // stage("Fix the permission issue") {
+        //     agent {
+        //         node {
+        //             label 'master'
+        //         }
+        //     }
+        //     steps {
+        //         sh "sudo chown root:ubuntu /run/docker.sock"
+        //     }
+        // }
         stage('Git checkout') {
              agent {
                 docker { 
