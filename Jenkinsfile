@@ -25,12 +25,16 @@ pipeline {
                 git branch: 'Testing_container', credentialsId: 'Github', url: 'https://github.com/blackbow47/TF-test.git'
                 // docker: exec -it --user root $CONTAINER_ID sh
                 // sh 'apk add sudo'
-                sh 'wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip'
-                sh 'unzip -o terraform_0.12.21_linux_amd64.zip && rm terraform_0.12.21_linux_amd64.zip'
-                sh 'mv terraform /usr/bin/terraform'
-                sh 'terraform fmt'
-                sh 'terraform init'
-                sh 'terraform apply --auto-approve'
+                sh 'mkdir new_dir'
+                sh 'cd new_dir'
+                sh 'touch anewfile'
+                sh '-alh'
+                // sh 'wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip'
+                // sh 'unzip -o terraform_0.12.21_linux_amd64.zip && rm terraform_0.12.21_linux_amd64.zip'
+                // sh 'mv terraform /usr/bin/terraform'
+                // sh 'terraform fmt'
+                // sh 'terraform init'
+                // sh 'terraform apply --auto-approve'
             }
         }
         // stage('terraform format check') {
