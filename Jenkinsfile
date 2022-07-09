@@ -11,7 +11,7 @@ pipeline {
                 }
             }
             steps {
-                sh "chown root:jenkins /run/docker.sock"
+                sh "chown root:ubuntu /run/docker.sock"
             }
         }
         stage('Git checkout') {
