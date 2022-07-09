@@ -7,7 +7,6 @@ pipeline {
     // }
     stages {
         stage("Fix the permission issue") {
-            agent 'master'
             steps {
                 sh "sudo chown root:jenkins /run/docker.sock"
             }
