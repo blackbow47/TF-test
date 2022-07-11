@@ -38,12 +38,12 @@ pipeline {
                 sh 'ls -alh'
                 // sh ''
                 sh 'pwd'
-                // sh 'wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip'
-                // sh 'unzip -o terraform_0.12.21_linux_amd64.zip && rm terraform_0.12.21_linux_amd64.zip'
-                // sh 'mv terraform /usr/bin/terraform'
-                // sh 'terraform fmt'
-                // sh 'terraform init'
-                // sh 'terraform apply --auto-approve'
+                sh 'wget https://releases.hashicorp.com/terraform/0.12.21/terraform_0.12.21_linux_amd64.zip'
+                sh 'unzip -o terraform_0.12.21_linux_amd64.zip && rm terraform_0.12.21_linux_amd64.zip'
+                sh 'mv terraform /usr/bin/terraform'
+                sh 'terraform fmt'
+                sh 'terraform init'
+                sh 'terraform apply --auto-approve'
             }
         }
         // stage('terraform format check') {
